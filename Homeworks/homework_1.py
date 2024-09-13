@@ -3,7 +3,7 @@ import math
 class Location:
     def __init__(self, x: int, y: int): 
         self.x = x
-        self.y = y 
+        self.y = y
 
     def __str__(self): 
         return f'({self.x}, {self.y})'
@@ -53,11 +53,12 @@ class RideSharingApp:
             self.passengers.remove(passenger)
 
     def find_cheapest_car(self): 
-        cheapest_car = self.cars[0]  # Assume the first car is the cheapest
-        for car in self.cars[1:]:  # Start checking from the second car onwards
+        cheapest_car = self.cars[0]  
+        for car in self.cars[1:]:  
             if car.cost_per_mile < cheapest_car.cost_per_mile:
-                cheapest_car = car  # Update the cheapest car if a lower cost is found  
-        print(cheapest_car)
+                cheapest_car = car  
+        print(f'Cheapest car available: {cheapest_car.car_name}, Cost per mile: {cheapest_car.cost_per_mile}')
+        return cheapest_car
 
     def find_nearest_car(self, passenger: Passenger): 
         if not self.cars:
@@ -76,7 +77,8 @@ class RideSharingApp:
                 nearest_car = car 
                 nearest_distance = distance
 
-        print(nearest_car)
+        print(f'Nearest car for {passenger.passenger_name}: {nearest_car.car_name}, Distance: {nearest_distance:.2f}')
+        return nearest_car
 
 # Example Usage
 print('---------------------Object Creation------------------')
