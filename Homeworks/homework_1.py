@@ -6,7 +6,7 @@ class Location:
         self.y = y
 
     def __str__(self): 
-        return f'({self.x}, {self.y})'
+        return f'({self.x},{self.y})'
 
 class Car:
     def __init__(self, car_name: str, location: Location, cost_per_mile: float): 
@@ -61,10 +61,6 @@ class RideSharingApp:
         return cheapest_car
 
     def find_nearest_car(self, passenger: Passenger): 
-        if not self.cars:
-            print("No cars available")
-            return
-
         nearest_car = self.cars[0]
         nearest_distance = math.sqrt((nearest_car.location.x - passenger.location.x) ** 2 +
                                      (nearest_car.location.y - passenger.location.y) ** 2)
