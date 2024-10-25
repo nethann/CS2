@@ -1,7 +1,7 @@
 import time
 
 def num_paths(m, n):
-    # Create a 2D list to store the number of paths at each grid cell
+    # Creates a 2D list to store the number of paths at each grid cell
     dp = [[1]*n for _ in range(m)]
     
     # Iterating through the grid
