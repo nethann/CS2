@@ -10,9 +10,11 @@ class CircularLinkedList:
     def append(self, value):
         new_node = Node(value)
         if not self.head:
+            # If list is empty, initialize it with the new node
             self.head = new_node
             self.head.next = self.head
         else:
+            # Traverse to the last node and append the new node
             current = self.head
             while current.next != self.head:
                 current = current.next
@@ -20,7 +22,8 @@ class CircularLinkedList:
             new_node.next = self.head
 
     def remove(self, node):
-        if self.head == self.head.next:  # Only one node
+        #Removes specified node from the circular linked list.
+        if self.head == self.head.next:  
             self.head = None
         else:
             current = self.head
@@ -31,7 +34,7 @@ class CircularLinkedList:
                 self.head = node.next
 
 def one_potato_two_potato(n, k):
-    # Create a circular linked list with group_size nodes
+    # Creates a circular linked list with  nodes
     circle = CircularLinkedList()
     for i in range(n):
         circle.append(i)
@@ -47,6 +50,7 @@ def one_potato_two_potato(n, k):
 
     return circle.head.value
 
+#my outputs
 group_size = 11  
 steps = 8       
-print(one_potato_two_potato(group_size, steps))  # Output: 8
+print(one_potato_two_potato(group_size, steps))  
