@@ -47,7 +47,7 @@ def tree_info(node):
     print(f"Is a Binary Search Tree: {'Yes' if is_bst(node) else 'No'}")
     print(f"Is Balanced: {'Yes' if is_balanced(node) else 'No'}")
 
-# Example usage
+# my output  
 root = TreeNode(1, TreeNode(2, TreeNode(4), TreeNode(5)), TreeNode(3))
 tree_info(root)
 
